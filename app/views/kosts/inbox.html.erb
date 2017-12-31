@@ -1,0 +1,15 @@
+<h1>inbox:</h1>
+<% @message.each do |m| %>
+	<div>
+
+		<div>lapak:<%= m.nama_kos %></div>
+		<div>message:<%= m.pesan %></div>
+		<div>from: <%= m.email %></div>
+		<div>
+			<%= link_to 'delete', {controller: 'messages', action:'destroy', id: m.id}, method: :delete, class: 'btn btn-danger' %>
+			<%= link_to 'reply', {controller: 'messages', action:'new',
+			:received => m.sender, :param_id_kos => m.kost_id }, class: 'btn btn-primary' %>
+		</div>
+		<br>
+	</div>
+<% end %>

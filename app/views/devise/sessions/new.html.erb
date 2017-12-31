@@ -1,0 +1,22 @@
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="body"></div>
+    <div class="grad"></div>
+    <div class="header">
+      <div>Lapa<span>Kos</span></div>
+    </div>
+    <br>
+    <div class="login">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true %><br/>
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %><br/>
+        <%= f.check_box :remember_me %><br/>
+        <%= f.label :remember_me %><br/>
+        <%= f.submit "Log in" %><br/>
+
+        <%= render "devise/shared/links" %>     
+    </div>
+    <% end %>
+    

@@ -1,0 +1,13 @@
+<%= render 'header' %>
+<div class="container wrapper-detail">
+	<% @kosts.each do |b| %>
+		<div class="detail-box">
+			<div class="box-img"><img src="http://cdn2.tstatic.net/style/foto/bank/images/kos-siap-huni_20161112_222704.jpg" /></div>
+			<div class="box-nama"><h3><%= b.nama_kos %></h2></div>
+			<div class="box-harga"><h3>IDR <%= b.harga_kos %><h3></div>
+			<div class="box-alamat"><p><%= b.alamat %></p></div>
+			<div class="box-pesan"><p><%= link_to 'PESAN', {controller: 'kosts', action:'show', id: b.id} %></p></div>
+		</div>
+	<% end %>
+
+</div>

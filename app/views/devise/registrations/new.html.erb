@@ -1,0 +1,42 @@
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="body"></div>
+      <div class="grad"></div>
+      <div class="header">
+        <div>Lapa<span>Kos</span></div>
+      </div>
+      <br>
+      <div class="login">
+          <%= f.label :email %><br/>
+          <%= f.email_field :email, autofocus: true %><br/>
+
+          <%= f.label :password %>
+          <% if @minimum_password_length %><br/>
+
+          <%= f.password_field :password, autocomplete: "off" %>
+
+          <%= f.label :password_confirmation %><br />
+
+          <%= f.password_field :password, autocomplete: "off" %><br/>
+          <%= f.check_box :remember_me %><br/>
+          <%= f.label :remember_me %><br/>
+          <%= f.label :Nama %><br/>
+          <%= f.text_field :Nama %><br/>
+          <%= f.label :NoId %><br/>
+          <%= f.text_field :NoId %><br/>
+          <%= f.label :Alamat %><br/>
+          <%= f.text_field :Alamat %><br/>
+          <%= f.label :Jk %><br/>
+          <%= f.text_field :Jk %><br/>
+          
+    <div class="field">
+    add an image....
+    <%= f.file_field :image %>
+    </div>
+
+          <%= f.submit "Sign up" %>
+          <% end %><br/>
+      <%= render "devise/shared/links" %>
+      </div>
+      <% end %>

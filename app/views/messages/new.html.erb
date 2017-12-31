@@ -1,0 +1,13 @@
+<h1>Message</h1>
+<%= form_for(@message) do |f| %>
+  <div>
+    <%= f.label :'Message: ' %>
+    <%= f.text_area :pesan %>
+    <%= @received %>
+    <%= @id_kos %>
+  </div>
+  <%= f.hidden_field :kost_id, :value => @id_kos %>
+  <%= f.hidden_field :receiver, :value => @received %>
+  <%= f.hidden_field :pengguna_id, :value => current_pengguna.id %>
+  <%= f.submit 'tanyakan'%>
+<% end %>

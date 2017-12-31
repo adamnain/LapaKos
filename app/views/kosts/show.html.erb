@@ -1,0 +1,12 @@
+<h1>Show </h1>
+<%= @kost.nama_kos %><br>
+<%= @kost.harga_kos %><br>
+<%= @kost.fasilitas %><br>
+<%= @kost.alamat %><br>
+<%= @kost.keterangan_lain %><br>
+<p>
+
+<%= @kost.pengguna_id %><br>
+</p>
+
+<div><%= link_to 'tanyakan', {controller: 'messages', action:'new', :received => @kost.pengguna_id, :param_id_kos => @kost.id } %></div>

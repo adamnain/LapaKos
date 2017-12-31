@@ -1,0 +1,171 @@
+/*=================> css reset <===================*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*=================> end of css reset <===================*/
+
+
+.clear-both{
+	clear: both;
+}
+/*=================> header <===================*/
+header{
+	height: 60px;
+	background-color: #fff;
+	border-bottom: 1px solid #BDBDBD;
+}
+#logo{
+	float: left;
+	margin-top: 10px;
+}
+#logo img{
+	height: 45px;
+}
+nav{
+	float: right;
+	margin-top: 5px;
+}
+nav ul{
+	padding-top: 15px;
+}
+nav ul li{
+	display: inline;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #1071a1;
+	padding: 10px;
+}
+nav ul li a:hover{
+	text-decoration: none;
+	color: #e04395;
+	padding-right: 10px;
+}
+.btkelola{
+	background-color: #e04395;
+	color: #fff;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+}
+.btkelola:hover{
+	background-color: #e04395;
+	color: #fff;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+}
+/*=================> end of header <===================*/
+/*=================> slider <===================*/
+.slider-main{
+	width: 100%;
+	height: 10px;
+}
+/*=================> end of slider <===================*/
+/*=================> searchbox <===================*/
+.searchmain{
+	height: 60px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: #e04395;
+
+}
+.btn-pink{
+	background-color: #e04395;
+	height: 60px;
+	color: #fff;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+/*=================> end of searchbox <===================*/
+/*=================> section dekat kampus <===================*/
+#dekat-kampus{
+	text-align: center;
+	background-color: #f1f1f1;
+}
+#dekat-kampus h1{
+	margin-bottom: 40px;
+}
+.profil-kampus{
+	width: 100%;
+	height: 300px;
+}
+.profil-kampus img{
+	width: 300px;
+	height: 300px;
+	position: relative;
+}
+.profil-kampus h2{
+	position: absolute;
+	top: 120px;
+	right: 0px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+
+.btn-selengkapnya{
+	margin: 50px 0px;
+}
+.btn-selengkapnya a{
+	width: 150px;
+	height: 40px;
+	background-color: #e04395;
+	text-decoration: none;
+	padding: 10px;
+	color: #fff;
+}
+/*=================> end of section dekat kampus <===================*/
+/*=================> wdget footer <===================*/
+#widget-footer{
+	background-color: #424242;
+	height: 300px;
+	color: #fff;
+}
+footer{
+	text-align: center;
+	background-color: #212121;
+	color: #fff;
+	padding: 10px;
+}
+/*=================> end widget footer <===================*/
