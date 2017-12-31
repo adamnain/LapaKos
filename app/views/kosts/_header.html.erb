@@ -9,11 +9,9 @@
     <!--nav-->
     <nav>
       <ul>
-        <li><a href="#">
-        <%= link_to "Login", kosts_path %>
-        </a></li>
-        <li><a href="#">Daftar</a></li>
-        <li><a href="#" class="btkelola">Kelola Kosan</a></li>
+        <li><%= link_to "Login", kosts_path %></li>
+        <li><%= link_to "Sign Up", new_pengguna_registration_path	 %></li>
+        <li><%= link_to "Kelola Kosan", new_pengguna_registration_path, class: "btkelola"%></li>
       </ul>
     </nav>
     <!--end of nav-->

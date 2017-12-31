@@ -15,11 +15,10 @@
 				<!--nav-->
 				<nav>
 					<ul>
-						<li><a href="#">
-						<%= link_to "Login", kosts_path %>
-						</a></li>
-						<li><a href="#">Daftar</a></li>
-						<li><a href="#" class="btkelola">Kelola Kosan</a></li>
+						<li><%= link_to "Login", kosts_path %></li>
+						<li><%= link_to "Sign Up", new_pengguna_registration_path	 %></li>
+						<li><%= link_to "Kelola Kosan", new_pengguna_registration_path, class: "btkelola" %></li>
+
 					</ul>
 				</nav>
 				<!--end of nav-->
@@ -33,23 +32,23 @@
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
-			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			    <li data-target="#myCarousel" data-slide-to="1"></li>
-			    <li data-target="#myCarousel" data-slide-to="2"></li>
+			    <li data-target="#" data-slide-to="0" class="active"></li>
+			    <li data-target="#" data-slide-to="1"></li>
+			    <li data-target="#" data-slide-to="2"></li>
 			  </ol>
 
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner">
 			    <div class="item active">
-			      <%= image_tag("slide1.jpg", :alt => "slide 1", :class => "slider-main") %>
+			      <%= image_tag("slide3.jpg", :alt => "slide 1", :class => "slider-main") %>
 			    </div>
 
 			    <div class="item">
-			      <%= image_tag("slide2.jpg", :alt => "slide 2", :class => "slider-main") %>
+			      <%= image_tag("slide3.jpg", :alt => "slide 2", :class => "slider-main") %>
 			    </div>
 
 			    <div class="item">
-			      <%= image_tag("slide2.jpg", :alt => "slide 3", :class => "slider-main") %>
+			      <%= image_tag("slide3.jpg", :alt => "slide 3", :class => "slider-main") %>
 			    </div>
 			  </div>
 
@@ -69,19 +68,16 @@
 
 
 		<!--search box-->
-            <div class="container">
-                <div class="form-group">
-                    <div class="input-group searchwrapper">
-                        <input class="form-control searchmain" type="text" name="search" placeholder="ketik nama daerah" required/>
-                        <span class="input-group-btn">
-                            <button class="btn btn-pink" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"><span style="margin-left:10px;">Search</span></button>
-                        </span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-        </form>
+		<div class="container">
+			<div class="form-group">
+					<div>
+						<%= form_tag detail_path, class: "searchwrapper", :method => "get" do %>
+						    <%= text_field_tag :search, params[:search], class: "form-control", class: "searchmain", placeholder: "ketik alamat kosan" %>
+									<%= submit_tag "CARI", :name => nil, class: "btn btn-pink float-right" %>
+						<% end %>
+					</div>
+				</div>
+		</div>
 		<!--end of searchbox-->
 
 		<!--section dekat kampus-->

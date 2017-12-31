@@ -1,6 +1,10 @@
-<!-- nyoba search -->
-<%= form_tag(kosts_path, :method => 'get', id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Ketik alamat kos" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-<!-- selesai coba search -->
+<div class="search-detail-wrapper">
+  <div class="form-group">
+      <div>
+        <%= form_tag detail_path, class: "searchwrapper", :method => "get" do %>
+            <%= text_field_tag :search, params[:search], class: "form-control", class: "search-detail", placeholder: "ketik alamat kosan" %>
+              <%= submit_tag "CARI", :name => nil, class: "btn btn-search float-right" %>
+        <% end %>
+      </div>
+    </div>
+</div>

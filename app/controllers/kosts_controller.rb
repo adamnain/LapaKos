@@ -9,7 +9,11 @@ class KostsController < ApplicationController
 	end
 
 	def detail
-		@kosts = Kost.all
+		if params[:search]
+			@kosts = Kost.where("kosts.alamat LIKE concat('%', ?, '%')", params[:search])
+		else
+			@kosts = Kost.all
+		end
 	end
 
 	def show
@@ -73,6 +77,5 @@ class KostsController < ApplicationController
 	def resource_params
 		params.require(:kost).permit(:nama_kos, :harga_kos, :fasilitas, :alamat, :keterangan_lain, :pengguna_id)
 	end
-
 
 end

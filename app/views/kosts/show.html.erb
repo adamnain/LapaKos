@@ -1,12 +1,25 @@
-<h1>Show </h1>
-<%= @kost.nama_kos %><br>
-<%= @kost.harga_kos %><br>
-<%= @kost.fasilitas %><br>
-<%= @kost.alamat %><br>
-<%= @kost.keterangan_lain %><br>
-<p>
+<%= render 'header' %>
+<%= render 'searchbox'%>
+<div class="container">
+  <div class="img-show">
+    <img src="http://cdn2.tstatic.net/style/foto/bank/images/kos-siap-huni_20161112_222704.jpg" />
+  </div>
+  <div class="show-informasi">
+    <h3><%= @kost.nama_kos %></h3>
+    <h4>Fasilitas</h4>
+    <p><%= @kost.fasilitas %></p>
+    <h4>Alamat</h4>
+    <p><%= @kost.alamat %></p>
+    <h4>Keterangan Lain</h4>
+    <p><%= @kost.keterangan_lain %></p>
+    <h3>IDR <%= @kost.harga_kos %></h3>
+    <div class="box-pesan">
+      <p style="border:none; padding:10px;">
+        <%= link_to 'TANYAKAN', {controller: 'messages', action:'new', :received => @kost.pengguna_id, :param_id_kos => @kost.id }, class: 'btn-pesan' %>
+      </p>
+    </div>
+  </div>
 
-<%= @kost.pengguna_id %><br>
-</p>
 
-<div><%= link_to 'tanyakan', {controller: 'messages', action:'new', :received => @kost.pengguna_id, :param_id_kos => @kost.id } %></div>
+
+</div>

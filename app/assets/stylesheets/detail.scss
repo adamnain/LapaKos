@@ -41,3 +41,35 @@
   text-align: center;
   color: #000;
 }
+.btn-pesan{
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+.btn-pesan:hover{
+  background-color: #E91E63;
+}
+
+/*=================> sidebar <===================*/
+.sidebar-detail{
+  padding: 0px;
+  margin: 0px;
+}
+.side-title{
+  background-color: #f2f3f4;
+  border: 1px solid #d0d4db;
+  margin: 0px;
+}
+.side-title p{
+  margin: 0px;
+  padding: 5px;
+  color: #2d2d2d;
+}
+.side-content{
+  padding: 5px;
+}
+.sidebar-part{
+  width: 100%;
+  margin: 0px;
+}
+/*=================> end of sidebar <===================*/

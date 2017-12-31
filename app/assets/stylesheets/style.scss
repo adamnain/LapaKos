@@ -1,49 +1,4 @@
-/*=================> css reset <===================*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/*=================> end of css reset <===================*/
 
 
 .clear-both{
@@ -107,7 +62,14 @@ nav ul li a:hover{
 	margin-top: 50px;
 	margin-bottom: 50px;
 	color: #e04395;
-
+	width: 85%;
+}
+.searchmain{
+	height: 60px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: #e04395;
+	width: 85%;
 }
 .btn-pink{
 	background-color: #e04395;
@@ -115,8 +77,35 @@ nav ul li a:hover{
 	color: #fff;
 	margin-top: 50px;
 	margin-bottom: 50px;
+	width: 15%;
+}
+.float-right{
+	float: right;
+}
+.float-left{
+	float: left;
 }
 /*=================> end of searchbox <===================*/
+/*=================> searchbox detail <===================*/
+.search-detail-wrapper{
+	width: 65%;
+	margin: auto;
+}
+.search-detail{
+	height: 60px;
+	margin: 30px auto;
+	color: #e04395;
+	width:85%;
+}
+.btn-search{
+	background-color: #e04395;
+	height: 60px;
+	color: #fff;
+	margin: 30px auto;
+	width: 15%;
+}
+/*=================> end searchbox detail <===================*/
+
 /*=================> section dekat kampus <===================*/
 #dekat-kampus{
 	text-align: center;
