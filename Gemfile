@@ -4,7 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+#use paperclip
+gem "paperclip", "~> 4.2"
+gem 'dropzonejs-rails'
 #use bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
 #use jquery

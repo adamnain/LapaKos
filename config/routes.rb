@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'images/index'
+
+  get 'images/create'
+
   devise_for :penggunas
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/home', to: 'home#index'
@@ -9,4 +13,5 @@ Rails.application.routes.draw do
   get '/outbox', to: 'kosts#outbox'
   resources :kosts
   resources :messages
+  resources :images, only: [:index, :create]
 end
