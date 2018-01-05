@@ -11,9 +11,11 @@
 <body>
   <h1>My Images</h1>
 
-  <%= form_for(Image.new, html: { multipart: true, class: "dropzone"}) do |f|  %>
+  <%= form_for(Image.new, html: { multipart: true}) do |f|  %>
     <div class="fallback">
+      <%= Kost.maximum(:id) %>
       <%= f.file_field :avatar %><br>
+      <%= f.hidden_field :kosts_id, value: Kost.maximum(:id) %>
       <%= f.submit "Upload my Avatar" %>
     </div>
   <% end %>

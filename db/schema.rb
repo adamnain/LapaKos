@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180101052851) do
+ActiveRecord::Schema.define(version: 20180105155036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20180101052851) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "kosts_id"
+    t.index ["kosts_id"], name: "index_images_on_kosts_id"
   end
 
   create_table "kosts", force: :cascade do |t|
@@ -35,6 +37,14 @@ ActiveRecord::Schema.define(version: 20180101052851) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "pengguna_id"
+    t.string "kost_img_file_name"
+    t.string "kost_img_content_type"
+    t.integer "kost_img_file_size"
+    t.datetime "kost_img_updated_at"
+    t.string "kost_img2_file_name"
+    t.string "kost_img2_content_type"
+    t.integer "kost_img2_file_size"
+    t.datetime "kost_img2_updated_at"
     t.index ["pengguna_id"], name: "index_kosts_on_pengguna_id"
   end
 
@@ -87,6 +97,7 @@ ActiveRecord::Schema.define(version: 20180101052851) do
     t.index ["reset_password_token"], name: "index_penggunas_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "kosts", column: "kosts_id"
   add_foreign_key "kosts", "penggunas"
   add_foreign_key "messages", "penggunas"
 end

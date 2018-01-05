@@ -9,10 +9,12 @@ class KostsController < ApplicationController
 	end
 
 	def detail
+		#@kosts = Kost.find_by_sql(["SELECT * FROM images INNER JOIN kosts ON images.kost_id=kost.id;"])
 		if params[:search]
 			@kosts = Kost.where("kosts.alamat LIKE concat('%', ?, '%')", params[:search])
 		else
 			@kosts = Kost.all
+			#@kosts = Kost.find_by_sql(["SELECT * FROM images INNER JOIN kosts ON images.kost_id=kost.id;"])
 		end
 	end
 
@@ -43,7 +45,7 @@ class KostsController < ApplicationController
 	def create
 		@kost = Kost.new(resource_params)
 		if @kost.save
-			render plain: 'berhasil menyimpan data'
+			redirect_to controller: 'kosts', action: 'index'
 		else
 			render plain: 'gagal'
 		end
@@ -75,7 +77,7 @@ class KostsController < ApplicationController
 
 
 	def resource_params
-		params.require(:kost).permit(:nama_kos, :harga_kos, :fasilitas, :alamat, :keterangan_lain, :pengguna_id)
+		params.require(:kost).permit(:nama_kos, :harga_kos, :fasilitas, :alamat, :keterangan_lain, :pengguna_id, :kost_img, :kost_img2)
 	end
 
 end

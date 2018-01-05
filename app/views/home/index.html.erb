@@ -9,7 +9,9 @@
 			<div class="container">
 				<!--logo-->
 				<div id="logo">
-					<%= image_tag("logo.png", :alt => "LapaKos") %>
+					<a href="/">
+						<%= image_tag("logo.png", :alt => "LapaKos") %>
+					</a>
 				</div>
 				<!--end of logo-->
 				<!--nav-->
@@ -18,7 +20,6 @@
 						<li><%= link_to "Login", kosts_path %></li>
 						<li><%= link_to "Sign Up", new_pengguna_registration_path	 %></li>
 						<li><%= link_to "Kelola Kosan", new_pengguna_registration_path, class: "btkelola" %></li>
-
 					</ul>
 				</nav>
 				<!--end of nav-->
@@ -44,7 +45,7 @@
 			    </div>
 
 			    <div class="item">
-			      <%= image_tag("slide3.jpg", :alt => "slide 2", :class => "slider-main") %>
+			      <%= image_tag("slide2.jpg", :alt => "slide 2", :class => "slider-main") %>
 			    </div>
 
 			    <div class="item">
@@ -116,18 +117,14 @@
 
 		<!--section widget footer-->
 		<section id="widget-footer">
-			<div xlass="container-fluid">
-				<div class="row">
-					<div class="col-sm-3">
+			<div class="container">
+					<div class="col-sm-4">
 						isi widget
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						isi widget
 					</div>
-					<div class="col-sm-3">
-						isi widget
-					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						isi widget
 					</div>
 				</div>
