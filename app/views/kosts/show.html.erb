@@ -13,21 +13,25 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <%= image_tag @kost.kost_img.url(:medium), class: "show-img"%>
+          <%= image_tag @kost.kost_img.url(:original), class: "show-img"%>
         </div>
 
         <div class="item">
-          <%= image_tag @kost.kost_img2.url(:medium), class: "show-img"%>
+          <%= image_tag @kost.kost_img2.url(:original), class: "show-img"%>
+        </div>
+
+        <div class="item">
+          <%= image_tag @kost.kost_img3.url(:original), class: "show-img"%>
         </div>
 
       </div>
 
       <!-- Left and right controls -->
-      <a class="left carousel-control" data-slide="prev">
+      <a class="left carousel-control" href="#show-carousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="right carousel-control" data-slide="next">
+      <a class="right carousel-control" href="#show-carousel" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
         <span class="sr-only">Next</span>
       </a>

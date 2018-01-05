@@ -77,7 +77,7 @@ class KostsController < ApplicationController
 
 
 	def resource_params
-		params.require(:kost).permit(:nama_kos, :harga_kos, :fasilitas, :alamat, :keterangan_lain, :pengguna_id, :kost_img, :kost_img2)
+		params.require(:kost).permit(:nama_kos, :harga_kos, :fasilitas, :alamat, :keterangan_lain, :pengguna_id, :kost_img, :kost_img2, :kost_img3)
 	end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105155036) do
+ActiveRecord::Schema.define(version: 20180105173051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 20180105155036) do
     t.string "kost_img2_content_type"
     t.integer "kost_img2_file_size"
     t.datetime "kost_img2_updated_at"
+    t.string "kost_img3_file_name"
+    t.string "kost_img3_content_type"
+    t.integer "kost_img3_file_size"
+    t.datetime "kost_img3_updated_at"
     t.index ["pengguna_id"], name: "index_kosts_on_pengguna_id"
   end
 
