@@ -1,48 +1,35 @@
 <%= render 'header' %>
 <%= render 'searchbox'%>
 <div class="container">
-    <!--slider carousel-->
-    <div id="show-carousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#" data-slide-to="0" class="active"></li>
-        <li data-target="#" data-slide-to="1"></li>
-        <li data-target="#" data-slide-to="2"></li>
-      </ol>
+  <div class="carousel carousel-show slide article-slide" id="article-photo-carousel">
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <%= image_tag @kost.kost_img.url(:original), class: "show-img"%>
-        </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner cont-slider">
 
-        <div class="item">
-          <%= image_tag @kost.kost_img2.url(:original), class: "show-img"%>
-        </div>
-
-        <div class="item">
-          <%= image_tag @kost.kost_img3.url(:original), class: "show-img"%>
-        </div>
-
+      <div class="item active">
+        <%= image_tag @kost.kost_img.url(:original), class: "show-img"%>
       </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#show-carousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#show-carousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div class="item">
+        <%= image_tag @kost.kost_img2.url(:original), class: "show-img"%>
+      </div>
+      <div class="item">
+        <%= image_tag @kost.kost_img3.url(:original), class: "show-img"%>
+      </div>
     </div>
-
-  <!--end of slider-->
-
-  <div class="img-show">
-    <%#= image_tag @kost.kost_img.url(:medium)%>
-    <%#= image_tag @kost.kost_img2.url(:medium)%>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+        <%= image_tag @kost.kost_img.url(:original), class: "show-img"%>
+      </li>
+      <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+        <%= image_tag @kost.kost_img2.url(:original), class: "show-img"%>
+      </li>
+      <li class="" data-slide-to="2" data-target="#article-photo-carousel">
+        <%= image_tag @kost.kost_img3.url(:original), class: "show-img"%>
+      </li>
+    </ol>
   </div>
+
 
   <div class="show-informasi">
     <h3><%= @kost.nama_kos %></h3>
