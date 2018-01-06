@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 #heroku
-config.assets.initialize_on_precompile = false
+#config.assets.initialize_on_precompile = false
 
 module Lapakos
   class Application < Rails::Application
