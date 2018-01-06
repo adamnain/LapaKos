@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LapaKos Dashboard</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  	<!--menu dashboard-->
+  	<section id="menu-dashboard">
+
+  	<div id="foto-profil-wrapper">
+  		<%= image_tag("user.png", :alt => "foto profil", :class => "foto-profil") %>
+  	</div>
+
+      <!--parameter-->
+  		<ul>
+		  <li><%= link_to "Tambah Kos", new_kost_path %></li>
+		  <li><%= link_to 'Inbox', {controller: 'kosts', action:'inbox'} %></li>
+      <li><%= link_to "Outbox", {controller: 'kosts', action:'outbox'} %></li>
+      <li><%= link_to "Logout", destroy_pengguna_session_path, :method => :delete %></li>
+		</ul>
+
+  	</section>
+  	<!-- end of menu dashboard-->
+
+  	<!--content dashboard -->
+  	<section id="content-dashboard">
+  		<%= yield %>
+    </section>
+    <!--end of content dashboard -->
+  </body>
+</html>

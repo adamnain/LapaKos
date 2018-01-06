@@ -1,0 +1,51 @@
+/* ================> menu dashboard <================ */
+#menu-dashboard{
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color:   #cc0052;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+#menu-dashboard ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#menu-dashboard li a {
+    display: block;
+    color: #fff;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+#menu-dashboard li a.active {
+    background-color:  #99003d;
+    color: white;
+}
+
+#menu-dashboard li a:hover:not(.active) {
+    background-color:  #99003d;
+    color: white;
+}
+.foto-profil{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+#foto-profil-wrapper{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+/* ================> end of menu dashboard <================ */
+/* ================> content dashboard <================ */
+#content-dashboard{
+    margin-left:20%;
+    padding:1px 16px;
+    height:1000px;
+}
+
+/* ================> end of content dashboard <================ */

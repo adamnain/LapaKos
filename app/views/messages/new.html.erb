@@ -1,0 +1,19 @@
+<div id="logo-message">
+  <%= image_tag("logo.png", :alt => "LapaKos") %>
+</div>
+
+<div class="container wrap-message">
+  <%= form_for(@message) do |f| %>
+    <div>
+      <h2>Message</h2>
+      <%#= f.label :'Message: ' %></br>
+      <%= f.text_area :pesan, class: "message-form" %>
+      <%#= @received %>
+      <%#= @id_kos %>
+    </div>
+    <%= f.hidden_field :kost_id, :value => @id_kos %>
+    <%= f.hidden_field :receiver, :value => @received %>
+    <%= f.hidden_field :pengguna_id, :value => current_pengguna.id %>
+    <%= f.submit 'tanyakan', class: "btn btn-primary width-full"%>
+  <% end %>
+</div>

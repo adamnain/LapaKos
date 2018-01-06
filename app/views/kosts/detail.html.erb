@@ -1,0 +1,51 @@
+<%= render 'header' %>
+<%= render 'searchbox'%>
+
+<div class="container">
+	<div class="col-sm-9 content-detail">
+		<% @kosts.each do |b| %>
+			<div class="detail-box">
+				<div class="box-img"><%= image_tag b.kost_img.url(:medium)%></div>
+				<div class="box-nama"><h3><%= b.nama_kos %></h2></div>
+				<div class="box-harga"><h3>IDR <%= b.harga_kos %><h3></div>
+				<div class="box-alamat"><p><%= b.alamat %></p></div>
+				<div class="box-pesan"><p><%= link_to 'PESAN', {controller: 'kosts', action:'show', id: b.id},  class: 'btn-pesan' %></p></div>
+			</div>
+		<% end %>
+	</div>
+
+	<div class="col-sm-3 sidebar-detail">
+
+		<div class="sidebar-part">
+			<div class="side-title">
+				<p>Harga</p>
+			</div>
+			<div class="side-content">
+				content
+			</div>
+		</div>
+
+		<div class="sidebar-part">
+			<div class="side-title">
+				<p>Harga</p>
+			</div>
+			<div class="side-content">
+				content
+			</div>
+		</div>
+
+		<div class="sidebar-part">
+			<div class="side-title">
+				<p>Harga</p>
+			</div>
+			<div class="side-content">
+				content
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+</div>

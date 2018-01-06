@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+=======
+<p class="navbar-text pull-right">
+<% if pengguna_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+>>>>>>> 73f3b2f0c1602477102aaab7e03e943559cd861a
+<h1>Daftar Kosan:</h1>
+<% @kosts.each do |b| %>
+	<div>
+		<div><%= b.id %></div>
+		<div><%= b.nama_kos %></div>
+		<div><%= b.harga_kos %></div>
+		<div><%= b.fasilitas %></div>
+		<div><%= b.alamat %></div>
+		<div><%= b.keterangan_lain %></div>
+		<div><%= link_to 'show', {controller: 'kosts', action:'show', id: b.id} %></div>
+		<div><%= link_to 'edit', {controller: 'kosts', action:'edit', id: b.id} %></div>
+		<div><%= link_to 'delete', {controller: 'kosts', action:'destroy', id: b.id}, method: :delete %></div>
+		<br>
+	</div>
+<% end %>

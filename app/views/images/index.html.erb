@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DropzoneJS</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'http://yandex.st/bootstrap/3.1.1/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>My Images</h1>
+
+  <%= form_for(Image.new, html: { multipart: true}) do |f|  %>
+    <div class="fallback">
+      <%= Kost.maximum(:id) %>
+      <%= f.file_field :avatar %><br>
+      <%= f.hidden_field :kosts_id, value: Kost.maximum(:id) %>
+      <%= f.submit "Upload my Avatar" %>
+    </div>
+  <% end %>
+
+  <div class="index">
+    <%= render "index" %>
+  </div>
+</body>
+</html>

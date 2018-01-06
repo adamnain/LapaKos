@@ -1,0 +1,52 @@
+<%= render 'header' %>
+<%= render 'searchbox'%>
+<div class="container">
+  <div class="carousel carousel-show slide article-slide" id="article-photo-carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner cont-slider">
+
+      <div class="item active">
+        <%= image_tag @kost.kost_img.url(:original), class: "show-img"%>
+      </div>
+      <div class="item">
+        <%= image_tag @kost.kost_img2.url(:original), class: "show-img"%>
+      </div>
+      <div class="item">
+        <%= image_tag @kost.kost_img3.url(:original), class: "show-img"%>
+      </div>
+    </div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+        <%= image_tag @kost.kost_img.url(:original), class: "show-img"%>
+      </li>
+      <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+        <%= image_tag @kost.kost_img2.url(:original), class: "show-img"%>
+      </li>
+      <li class="" data-slide-to="2" data-target="#article-photo-carousel">
+        <%= image_tag @kost.kost_img3.url(:original), class: "show-img"%>
+      </li>
+    </ol>
+  </div>
+
+
+  <div class="show-informasi">
+    <h3><%= @kost.nama_kos %></h3>
+    <h4>Fasilitas</h4>
+    <p><%= @kost.fasilitas %></p>
+    <h4>Alamat</h4>
+    <p><%= @kost.alamat %></p>
+    <h4>Keterangan Lain</h4>
+    <p><%= @kost.keterangan_lain %></p>
+    <h3>IDR <%= @kost.harga_kos %></h3>
+    <div class="box-pesan">
+      <p style="border:none; padding:10px;">
+        <%= link_to 'TANYAKAN', {controller: 'messages', action:'new', :received => @kost.pengguna_id, :param_id_kos => @kost.id }, class: 'btn-pesan' %>
+      </p>
+    </div>
+  </div>
+
+
+
+</div>

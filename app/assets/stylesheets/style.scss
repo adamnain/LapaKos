@@ -1,0 +1,263 @@
+
+
+
+.clear-both{
+	clear: both;
+}
+/*=================> header <===================*/
+header{
+	height: 60px;
+	background-color: #fff;
+	border-bottom: 1px solid #BDBDBD;
+}
+#logo{
+	float: left;
+	margin-top: 10px;
+}
+#logo img{
+	height: 45px;
+}
+nav{
+	float: right;
+	margin-top: 5px;
+}
+nav ul{
+	padding-top: 15px;
+}
+nav ul li{
+	display: inline;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #1071a1;
+	padding: 10px;
+}
+nav ul li a:hover{
+	text-decoration: none;
+	color: #e04395;
+	padding-right: 10px;
+}
+.btkelola{
+	background-color: #e04395;
+	color: #fff;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+}
+.btkelola:hover{
+	background-color: #e04395;
+	color: #fff;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+}
+/*=================> end of header <===================*/
+/*=================> slider <===================*/
+.slider-main{
+	width: 100%;
+	height: 10px;
+}
+/*=================> end of slider <===================*/
+/*=================> searchbox <===================*/
+.searchmain{
+	height: 60px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: #e04395;
+	width: 85%;
+}
+.searchmain{
+	height: 60px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: #e04395;
+	width: 85%;
+}
+.btn-pink{
+	background-color: #e04395;
+	height: 60px;
+	color: #fff;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 15%;
+}
+.float-right{
+	float: right;
+}
+.float-left{
+	float: left;
+}
+/*=================> end of searchbox <===================*/
+/*=================> searchbox detail <===================*/
+.search-detail-wrapper{
+	width: 65%;
+	margin: auto;
+}
+.search-detail{
+	height: 60px;
+	margin: 30px auto;
+	color: #e04395;
+	width:85%;
+}
+.btn-search{
+	background-color: #e04395;
+	height: 60px;
+	color: #fff;
+	margin: 30px auto;
+	width: 15%;
+}
+/*=================> end searchbox detail <===================*/
+
+/*=================> section dekat kampus <===================*/
+#dekat-kampus{
+	text-align: center;
+	background-color: #f1f1f1;
+}
+#dekat-kampus h1{
+	margin-bottom: 40px;
+}
+.profil-kampus{
+	width: 100%;
+	height: 300px;
+}
+.profil-kampus img{
+	width: 300px;
+	height: 300px;
+	position: relative;
+}
+.profil-kampus h2{
+	position: absolute;
+	top: 120px;
+	right: 0px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+
+.btn-selengkapnya{
+	margin: 50px 0px;
+}
+.btn-selengkapnya a{
+	width: 150px;
+	height: 40px;
+	background-color: #e04395;
+	text-decoration: none;
+	padding: 10px;
+	color: #fff;
+}
+/*=================> end of section dekat kampus <===================*/
+/*=================> wdget footer <===================*/
+#widget-footer{
+	background-color: #424242;
+	height: 300px;
+	color: #fff;
+}
+footer{
+	text-align: center;
+	background-color: #212121;
+	color: #fff;
+	padding: 10px;
+}
+/*=================> end widget footer <===================*/
+/*=================> quote carousel <===================*/
+#quote-carousel
+{
+  padding: 0 10px 30px 10px;
+  margin-top: 30px;
+}
+
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #222;
+  font-size: 2.3em;
+  text-shadow: none;
+  margin-top: 30px;
+}
+/* Previous button  */
+#quote-carousel .carousel-control.left
+{
+  left: -12px;
+}
+/* Next button  */
+#quote-carousel .carousel-control.right
+{
+  right: -12px !important;
+}
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li
+{
+  background: #c0c0c0;
+}
+#quote-carousel .carousel-indicators .active
+{
+  background: #333333;
+}
+#quote-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+
+.item blockquote img {
+    margin-bottom: 10px;
+}
+
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/**
+  MEDIA QUERIES
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #quote-carousel
+    {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+    }
+
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) {
+
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+}
+/*=================> end quote carousel <===================*/

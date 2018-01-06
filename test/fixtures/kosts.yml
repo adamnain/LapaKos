@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nama_kos: MyString
+  harga_kos: 1
+  foto: MyString
+  fasilitas: MyText
+  alamat: MyText
+  keterangan_lain: MyString
+  text: MyString
+
+two:
+  nama_kos: MyString
+  harga_kos: 1
+  foto: MyString
+  fasilitas: MyText
+  alamat: MyText
+  keterangan_lain: MyString
+  text: MyString

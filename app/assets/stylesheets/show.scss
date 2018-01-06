@@ -1,0 +1,72 @@
+/*=================> show kosts <===================*/
+.img-show img{
+  width: 65%;
+  height: auto;
+  float: left;
+}
+.show-informasi{
+  margin-left: 10px;
+  width: 32%;
+  float: right;
+  border: 1px solid #d0d4db;
+}
+.show-informasi h3{
+  color: #1071a1;
+  background-color:  #f2f3f4;
+  padding: 5px;
+  margin: 0px !important;
+  border-bottom: 1px solid #d0d4db;
+}
+.show-informasi h4{
+  background-color:  #f2f3f4;
+  padding: 5px;
+  margin: 0px !important;
+  border-bottom: 1px solid #d0d4db;
+}
+.show-informasi p{
+  padding: 5px 5px 5px 20px;
+  margin: 0px !important;
+  border-bottom: 1px solid #d0d4db;
+}
+/*=================> carousel images <===================*/
+.carousel-show {
+    width: 65%;
+    height: 450px;
+    float: left;
+}
+.show-img{
+  width: 100%;
+  height: 100%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators {
+    bottom: 0;
+    left: 0;
+    margin-left: 5px;
+    width: 100%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 54px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 100px;
+}
+/* Indicators images style */
+.article-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 54px;
+    left: 0;
+    width: 100px;
+}
+/* Indicators active image style */
+.article-slide .carousel-indicators .active img {
+    border: 2px solid #428BCA;
+    opacity: 0.7;
+}
