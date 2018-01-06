@@ -8,19 +8,22 @@
   <%= link_to "Login", new_pengguna_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
+<div class="judul-dashboard">
+  <h1>Lapak Kosan Anda:</h1>
+</div>
 
-<h1>Daftar Kosan:</h1>
-<% @kosts.each do |b| %>
-	<div>
-		<div><%= b.id %></div>
-		<div><%= b.nama_kos %></div>
-		<div><%= b.harga_kos %></div>
-		<div><%= b.fasilitas %></div>
-		<div><%= b.alamat %></div>
-		<div><%= b.keterangan_lain %></div>
-		<div><%= link_to 'show', {controller: 'kosts', action:'show', id: b.id} %></div>
-		<div><%= link_to 'edit', {controller: 'kosts', action:'edit', id: b.id} %></div>
-		<div><%= link_to 'delete', {controller: 'kosts', action:'destroy', id: b.id}, method: :delete %></div>
-		<br>
-	</div>
-<% end %>
+<div class="col-sm-12 content-detail">
+  <% @kosts.each do |b| %>
+    <div class="detail-box">
+      <div class="box-img"><%= image_tag b.kost_img.url(:medium)%></div>
+      <div class="box-nama"><h3><%= b.nama_kos %></h2></div>
+      <div class="box-harga"><h3>IDR <%= b.harga_kos %><h3></div>
+      <div class="box-alamat"><p><%= b.alamat %></p></div>
+      <div class="box-action">
+          <%= link_to 'edit', {controller: 'kosts', action:'edit', id: b.id},  class: "btn btn-info" %>
+          <%= link_to 'delete', {controller: 'kosts', action:'destroy', id: b.id}, method: :delete, class: "btn btn-danger" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

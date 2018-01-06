@@ -1,39 +1,38 @@
-
+h2>Register</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="body"></div>
-      <div class="grad"></div>
-      <div class="header">
-        <div>Lapa<span>Kos</span></div>
-      </div>
-      <br>
-      <div class="login">
-          <%= f.label :email %><br/>
-          <%= f.email_field :email, autofocus: true %><br/>
 
+          <%= devise_error_messages! %><br/>
+          <div><%= f.label :Nama %><br />
+              <%= f.text_field :Nama, autofocus: true %></div>
+
+          <div><%= f.label :NoId %><br />
+              <%= f.text_field :NoId , autofocus: true %></div>
+
+          <div><%= f.label :Alamat %><br />
+              <%= f.text_field :Alamat , autofocus: true %></div>
+
+          <div><%= f.label :Jk %><br />
+              <%= f.text_field :Jk , autofocus: true %></div>
+
+          <div><%= f.label :tgl_lahir %><br />
+              <%= f.date_select :tgl_lahir %></div>
+
+          <div><%= f.label :email %><br />
+              <%= f.email_field :email %></div>
           <%= f.label :password %>
           <% if @minimum_password_length %><br/>
 
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.password_field :password, autocomplete: "off" %><br />
 
           <%= f.label :password_confirmation %><br />
 
           <%= f.password_field :password, autocomplete: "off" %><br/>
           <%= f.check_box :remember_me %><br/>
           <%= f.label :remember_me %><br/>
-          <%= f.label :Nama %><br/>
-          <%= f.text_field :Nama %><br/>
-          <%= f.label :NoId %><br/>
-          <%= f.text_field :NoId %><br/>
-          <%= f.label :Alamat %><br/>
-          <%= f.text_field :Alamat %><br/>
-          <%= f.label :Jk %><br/>
-          <%= f.text_field :Jk %><br/>
-          
-    <div class="field">
-    add an image....
-    <%= f.file_field :image %>
-    </div>
+
+          <div>Upload Foto Profil
+              <%= f.file_field :Foto %> </div>
 
           <%= f.submit "Sign up" %>
           <% end %><br/>

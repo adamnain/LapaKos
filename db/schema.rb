@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105173051) do
+ActiveRecord::Schema.define(version: 20180105202805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20180105173051) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "kosts_id"
-    t.index ["kosts_id"], name: "index_images_on_kosts_id"
+    t.bigint "kost_id"
+    t.index ["kost_id"], name: "index_images_on_kost_id"
   end
 
   create_table "kosts", force: :cascade do |t|
@@ -96,12 +96,13 @@ ActiveRecord::Schema.define(version: 20180105173051) do
     t.string "NoId"
     t.text "Alamat"
     t.string "Jk"
-    t.string "image"
+    t.datetime "tgl_lahir"
+    t.string "Foto"
     t.index ["email"], name: "index_penggunas_on_email", unique: true
     t.index ["reset_password_token"], name: "index_penggunas_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "images", "kosts", column: "kosts_id"
+  add_foreign_key "images", "kosts"
   add_foreign_key "kosts", "penggunas"
   add_foreign_key "messages", "penggunas"
 end

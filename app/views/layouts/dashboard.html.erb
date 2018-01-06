@@ -19,7 +19,7 @@
 
       <!--parameter-->
   		<ul>
-		  <li><%= link_to "Tambah Kos", new_kost_path %></li>
+		  <li><%= link_to "Kelola Kosan", {controller: 'kosts', action:'index'} %></li>
 		  <li><%= link_to 'Inbox', {controller: 'kosts', action:'inbox'} %></li>
       <li><%= link_to "Outbox", {controller: 'kosts', action:'outbox'} %></li>
       <li><%= link_to "Logout", destroy_pengguna_session_path, :method => :delete %></li>

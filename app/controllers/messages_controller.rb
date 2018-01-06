@@ -15,9 +15,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      render plain: 'berhasil menyimpan data'
+      redirect_to controller: 'kosts', action: 'outbox'
     else
-      render plain: 'gagal'
+      render plain: 'Pesan gagal terkirim silahkan kembali dan coba lagi'
     end
   end
 

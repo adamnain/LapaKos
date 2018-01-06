@@ -9,12 +9,10 @@ class KostsController < ApplicationController
 	end
 
 	def detail
-		#@kosts = Kost.find_by_sql(["SELECT * FROM images INNER JOIN kosts ON images.kost_id=kost.id;"])
 		if params[:search]
 			@kosts = Kost.where("kosts.alamat LIKE concat('%', ?, '%')", params[:search])
 		else
 			@kosts = Kost.all
-			#@kosts = Kost.find_by_sql(["SELECT * FROM images INNER JOIN kosts ON images.kost_id=kost.id;"])
 		end
 	end
 
@@ -27,7 +25,6 @@ class KostsController < ApplicationController
 		["SELECT messages.id as id, messages.pengguna_id as sender, kosts.nama_kos, messages.pesan, receiver,penggunas.email, kost_id
 			FROM ((messages INNER JOIN kosts ON messages.kost_id = kosts.id)
 			INNER JOIN penggunas ON kosts.pengguna_id = penggunas.id) WHERE messages.receiver = ?", current_pengguna.id])
-		#@message = Message.find_by_sql(["SELECT * FROM messages INNER JOIN kosts ON (messages.kost_id = kosts.id) WHERE receiver = ?", current_pengguna.id])
 	end
 
 	def outbox
@@ -35,7 +32,6 @@ class KostsController < ApplicationController
 		["SELECT  messages.id as id, messages.pengguna_id as sender, kosts.nama_kos, messages.pesan, receiver,penggunas.email, kost_id
 			FROM ((messages INNER JOIN kosts ON messages.kost_id = kosts.id)
 			INNER JOIN penggunas ON kosts.pengguna_id = penggunas.id) WHERE messages.pengguna_id = ?", current_pengguna.id])
-		#@message = Message.where(pengguna: current_pengguna.id)
 	end
 
 	def new
@@ -59,13 +55,13 @@ class KostsController < ApplicationController
 	def update
 		@kost = Kost.find(params[:id])
 		@kost.update(resource_params)
-		render plain: 'berhasil update'
+		redirect_to controller: 'kosts', action: 'index'
 	end
 
 	def destroy
 		kost = Kost.find(params[:id])
 		kost.destroy
-		render plain: 'berhasil di hapus'
+		redirect_to controller: 'kosts', action: 'index'
 	end
 
 

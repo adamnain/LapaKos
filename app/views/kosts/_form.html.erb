@@ -1,0 +1,62 @@
+<%= form_for @kost, class: "form-horizontal" do |f| %>
+
+	<div class="form-group">
+		<%= f.label :'Nama Kos: ', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<%= f.text_field :nama_kos, class: "form-control", placeholder: "Kosan Munggaran" %>
+		</div>
+	</div>
+	</br>	</br>	</br>
+
+	<div class="form-group">
+		<%= f.label :'Harga Kos: ', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<%= f.text_field :harga_kos, class: "form-control", placeholder: "5000000" %>
+		</div>
+	</div>
+	</br>	</br>
+
+	<div class="form-group">
+		<%= f.label :'Fasilitas: ', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<%= f.text_area :fasilitas, class: "form-control", placeholder: "WC di dalam, AC, Dapur"  %>
+		</div>
+	</div>
+	</br>	</br>	</br>
+
+	<div class="form-group">
+		<%= f.label :'Alamat: ', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<%= f.text_area :alamat, class: "form-control", placeholder: "alamat lengkap beserta kota"  %>
+		</div>
+	</div>
+	</br>	</br>	</br>
+
+	<div class="form-group">
+		<%= f.label :'Keterangan Lain: ', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<%= f.text_area :keterangan_lain, class: "form-control", placeholder: "15 menit ke kampus UIN Bandung" %>
+		</div>
+	</div>
+	</br>	</br>	</br>
+
+	<div class="form-group">
+		<%= f.label :'Upload Photos: ', class: "col-sm-2 control-label" %>
+		<div class="col-sm-10">
+			<div>
+				<%= f.file_field :kost_img, class: "btn btn-default" %></br>
+				<%= f.file_field :kost_img2, class: "btn btn-default" %></br>
+				<%= f.file_field :kost_img3, class: "btn btn-default" %></br>
+			</div>
+		</div>
+	</div>
+	</br>	</br>	</br>
+
+	<%= f.hidden_field :pengguna_id, :value => current_pengguna.id %>
+	
+	<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+			<%= f.submit 'Submit', class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

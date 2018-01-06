@@ -1,25 +1,5 @@
-<h1>New</h1>
-<%= form_for(@kost) do |f| %>
-	<div>
-		<%= f.label :'Nama Kos: ' %>
-		<%= f.text_field :nama_kos %>
-	</div>
-	<div>
-		<%= f.label :'Harga Kos: ' %>
-		<%= f.text_field :harga_kos %>
-	</div>
-	<div>
-		<%= f.label :'Fasilitas: ' %>
-		<%= f.text_area :fasilitas %>
-	</div>
-	<div>
-		<%= f.label :'Alamat: ' %>
-		<%= f.text_area :alamat %>
-	</div>
-	<div>
-		<%= f.label :'Keterangan Lain' %>
-		<%= f.text_area :keterangan_lain %>
-	</div>
+<div class="judul-dashboard">
+	<h1>Edit Kosan</h1>
+</div>
 
-	<%= f.submit %>
-<% end %>
+<%= render 'form'%>

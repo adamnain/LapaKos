@@ -1,11 +1,6 @@
 class Kost < ApplicationRecord
-	:nama_kos
-	:harga_kos
-	:fasilitas
-	:alamat
-	:keterangan_lain
 
-	belongs_to :pengguna
+	belongs_to :pengguna, optional:true
 	has_many :image
 
 	has_attached_file :kost_img, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"

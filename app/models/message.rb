@@ -1,3 +1,5 @@
 class Message < ApplicationRecord
-  belongs_to :pengguna
+
+  belongs_to :pengguna, optional: true 
+
 end
