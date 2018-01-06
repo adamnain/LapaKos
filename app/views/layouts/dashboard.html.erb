@@ -17,13 +17,17 @@
   		<%= image_tag("user.png", :alt => "foto profil", :class => "foto-profil") %>
   	</div>
 
-      <!--parameter-->
   		<ul>
 		  <li><%= link_to "Kelola Kosan", {controller: 'kosts', action:'index'} %></li>
+      <li><%= link_to 'Tambah Kosan', {controller: 'kosts', action:'new'} %></li>
 		  <li><%= link_to 'Inbox', {controller: 'kosts', action:'inbox'} %></li>
       <li><%= link_to "Outbox", {controller: 'kosts', action:'outbox'} %></li>
       <li><%= link_to "Logout", destroy_pengguna_session_path, :method => :delete %></li>
 		</ul>
+
+    <div class="logo-white">
+      <%= image_tag("logowhite.png", :alt => "logo lapakos", :class => "logo-dahboard") %>
+    </div>
 
   	</section>
   	<!-- end of menu dashboard-->
