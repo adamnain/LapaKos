@@ -61,6 +61,7 @@ end
 
 group :production do
   ruby '2.4.0'
+  gem 'puma', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
