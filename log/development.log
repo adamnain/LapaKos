@@ -59306,3 +59306,11 @@ Processing by KostsController#detail as HTML
 Completed 200 OK in 82ms (Views: 79.2ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-07 00:57:37 +0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4153.2ms)
+Completed 200 OK in 4933ms (Views: 4855.8ms | ActiveRecord: 0.0ms)
+
+
