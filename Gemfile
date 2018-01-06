@@ -7,7 +7,6 @@ end
 
 #use paperclip
 gem "paperclip", "~> 4.2"
-gem 'dropzonejs-rails'
 #use bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
 #use jquery
