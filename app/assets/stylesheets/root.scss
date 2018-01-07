@@ -164,7 +164,7 @@ footer{
 	color: #fff;
 	padding: 10px;
 }
-.fa {
+#iconsosmed .fa {
 	color: #fff;
   padding: 20px;
   font-size: 30px;
@@ -182,10 +182,15 @@ footer{
 /*=================> end widget footer <===================*/
 
 /*=================> quote carousel <===================*/
+.judul-home{
+	text-align: center;
+}
+/* carousel */
 #quote-carousel
 {
   padding: 0 10px 30px 10px;
   margin-top: 30px;
+	height: 250px;
 }
 
 /* Control buttons  */
@@ -234,6 +239,7 @@ footer{
 .item blockquote {
     border-left: none;
     margin: 0;
+		margin-left: 150px;
 }
 
 .item blockquote img {
