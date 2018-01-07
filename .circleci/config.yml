@@ -7,11 +7,10 @@ jobs:
       - image: postgres:9.4.1
     steps:
       - checkout
+      - run: bundle update rails
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:drop
       - run: bundle exec rake db:create RAILS_ENV=test
       - run: bundle exec rake db:migrate RAILS_ENV=test
       - run: bundle exec rake test
       - run: bundle exec rspec spec
-
-     
