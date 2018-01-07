@@ -24,7 +24,8 @@ class MessagesController < ApplicationController
   def destroy
 		message = Message.find(params[:id])
 		message.destroy
-		render plain: 'berhasil di hapus'
+    redirect_to controller: 'kosts', action: 'index'
+
 	end
 
   private

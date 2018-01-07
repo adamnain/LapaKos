@@ -1,10 +1,13 @@
 <h1>outbox:</h1>
 <% @message.each do |m| %>
-	<div>
-		<div>lapak:<%= m.nama_kos %></div>
-		<div>message:<%= m.pesan %></div>
-		<div>to: <%= m.email %></div>
-		<br>
-		<%= link_to 'delete', {controller: 'messages', action:'destroy', id: m.id}, method: :delete, class: 'btn btn-danger' %> 
-	</div>
+<div class="msg msg--me">
+		<blockquote>
+			<div>lapak:<%= m.nama_kos %></div>
+			<div><%= m.pesan %></div>
+			<div>to: <%= m.email %></div>
+			<br>
+			<%= link_to 'delete', {controller: 'messages', action:'destroy', id: m.id}, method: :delete, class: 'btn btn-danger' %>
+		</blockquote>
+</div>
+
 <% end %>

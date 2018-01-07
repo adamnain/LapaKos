@@ -10,6 +10,8 @@ gem "paperclip", "~> 4.2"
 gem 'dropzonejs-rails'
 #use bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
+#font awesome
+gem 'font-awesome-sass'
 #use jquery
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -60,7 +62,7 @@ group :development do
 end
 
 group :production do
-  ruby '2.4.0'
+  #ruby '2.4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,13 +1,3 @@
-<p class="navbar-text pull-right">
-<% if pengguna_signed_in? %>
-  Logged in as <strong><%= current_pengguna.email %></strong>.
-  <%= link_to 'Edit profile', edit_pengguna_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_pengguna_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_pengguna_registration_pat, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_pengguna_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
 <div class="judul-dashboard">
   <h1>Lapak Kosan Anda:</h1>
 </div>

@@ -1,41 +1,80 @@
-h2>Register</h2>
+<%= render 'kosts/header' %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-          <%= devise_error_messages! %><br/>
-          <div><%= f.label :Nama %><br />
-              <%= f.text_field :Nama, autofocus: true %></div>
+<div class="container">
 
-          <div><%= f.label :NoId %><br />
-              <%= f.text_field :NoId , autofocus: true %></div>
+  <div class="judul-dashboard">
+    <h3>Register</h3>
+  </div>
 
-          <div><%= f.label :Alamat %><br />
-              <%= f.text_field :Alamat , autofocus: true %></div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "form-horizontal") do |f| %>
+    <%= devise_error_messages! %>
 
-          <div><%= f.label :Jk %><br />
-              <%= f.text_field :Jk , autofocus: true %></div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    </div>
 
-          <div><%= f.label :tgl_lahir %><br />
-              <%= f.date_select :tgl_lahir %></div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
 
-          <div><%= f.label :email %><br />
-              <%= f.email_field :email %></div>
-          <%= f.label :password %>
-          <% if @minimum_password_length %><br/>
+    <div class="form-group">
+      <%= f.label :password  %>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <i>(leave blank if you don't want to change it)</i>
+        <% if @minimum_password_length %>
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+    </div>
 
-          <%= f.password_field :password, autocomplete: "off" %><br />
+    <div class="form-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    </div>
 
-          <%= f.label :password_confirmation %><br />
+    <div class="form-group">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+      <i>(we need your current password to confirm your changes)</i>
+    </div>
 
-          <%= f.password_field :password, autocomplete: "off" %><br/>
-          <%= f.check_box :remember_me %><br/>
-          <%= f.label :remember_me %><br/>
+    <div class="form-group">
+      <%= f.label :Nama %>
+      <%= f.text_field :Nama, class: "form-control" %>
+    </div>
 
-          <div>Upload Foto Profil
-              <%= f.file_field :Foto %> </div>
+    <div>
+      <%= f.label :"Tanggal Lahir" %><br />
+      <%= f.date_select :tgl_lahir %>
+    </div>
 
-          <%= f.submit "Sign up" %>
-          <% end %><br/>
-      <%= render "devise/shared/links" %>
-      </div>
-      <% end %>
+    <div class="form-group">
+      <%= f.label :'No KTP' %>
+      <%= f.text_field :NoId, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Alamat %>
+      <%= f.text_field :Alamat, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :'Jenis Kelamin' %>
+      <%= select_tag('pengguna[Jk]', options_for_select([['Laki-laki', 'Laki-laki'], ['Perempuan', 'Perempuan']]))%>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.label :'add profil picture..' %>
+      <%= f.file_field :avatar, class: "btn btn-default" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <h4>Unhappy?</h4> <%= button_to "Hapus Akun", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+
+</div>

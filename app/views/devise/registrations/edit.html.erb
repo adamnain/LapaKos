@@ -1,108 +1,126 @@
-<<<<<<< HEAD
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  
-  <%= f.label :Nama %><br/>
-  <%= f.text_field :Nama %><br/>
-  <%= f.label :NoId %><br/>
-  <%= f.text_field :NoId %><br/>
-  <%= f.label :Alamat %><br/>
-  <%= f.text_field :Alamat %><br/>
-  <%= f.label :Jk %><br/>
-  <%= f.text_field :Jk %><br/>
-
-    <div class="field">
-    add an image....
-    <%= f.file_field :image %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+<p class="navbar-text pull-right">
+<% if pengguna_signed_in? %>
+  Logged in as <strong><%= current_pengguna.email %></strong>.
+<% else %>
+  <%= link_to "Sign up", new_pengguna_registration_pat, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_pengguna_session_path, :class => 'navbar-link'  %>
 <% end %>
+</p>
 
-<h3>Cancel my account</h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LapaKos Dashboard</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <body>
 
-<%= link_to "Back", :back %>
-=======
- <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  	<!--menu dashboard-->
+  	<section id="menu-dashboard">
+    	<div id="foto-profil-wrapper">
+        <%= image_tag current_pengguna.avatar.url(:thumb), class: "foto-profil"%>
+    	</div>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= devise_error_messages! %>
+    	<ul>
+  		  <li><%= link_to "Kelola Kosan", {controller: '/kosts', action:'index'} %></li>
+        <li><%= link_to 'Tambah Kosan', {controller: '/kosts', action:'new'} %></li>
+  		  <li><%= link_to 'Inbox', {controller: '/kosts', action:'inbox'} %></li>
+        <li><%= link_to "Outbox", {controller: '/kosts', action:'outbox'} %></li>
+        <li><%= link_to 'Edit profil', edit_pengguna_registration_path %></li>
+        <li><%= link_to "Logout", destroy_pengguna_session_path, :method => :delete %></li>
+  		</ul>
 
-    <div><%= f.label :Nama %><br />
-        <%= f.text_field :Nama, autofocus: true %></div>
+      <div class="logo-white">
+        <%= image_tag("logowhite.png", :alt => "logo lapakos", :class => "logo-dahboard") %>
+      </div>
 
-    <div><%= f.label :NoId %><br />
-        <%= f.text_field :NoId , autofocus: true %></div>
+  	</section>
+  	<!-- end of menu dashboard-->
 
-    <div><%= f.label :Alamat %><br />
-        <%= f.text_field :Alamat , autofocus: true %></div>
+  	<!--content dashboard -->
+  	<section id="content-dashboard">
 
-    <div><%= f.label :Jk %><br />
-        <%= f.text_field :Jk , autofocus: true %></div>
+      <div class="judul-dashboard">
+        <h1>Edit Profil</h1>
+      </div>
 
-    <div><%= f.label :tgl_lahir %><br />
-        <%= f.date_select :tgl_lahir %></div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "form-horizontal") do |f| %>
+        <%= devise_error_messages! %>
 
-    <div><%= f.label :email %><br />
-        <%= f.email_field :email %></div>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
 
-    <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off" %></div>
+        <div class="form-group">
+          <%= f.label :password  %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          <i>(leave blank if you don't want to change it)</i>
+            <% if @minimum_password_length %>
+              <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+        </div>
 
-    <div><%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        </div>
 
-    <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off" %></div>
+        <div class="form-group">
+          <%= f.label :current_password %>
+          <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+          <i>(we need your current password to confirm your changes)</i>
+        </div>
 
-    <div>Edit Foto Profil
-        <%= f.file_field :Foto %> </div><br />
+        <div class="form-group">
+          <%= f.label :Nama %>
+          <%= f.text_field :Nama, class: "form-control" %>
+        </div>
 
-    <div><%= f.submit "Update Profil" %></div>
-    <% end %>
+        <div>
+          <%= f.label :"Tanggal Lahir" %><br />
+          <%= f.date_select :tgl_lahir, :start_year => 2000 %>
+        </div>
 
-    <h3>Cancel my account</h3>
+        <div class="form-group">
+          <%= f.label :'No KTP' %>
+          <%= f.text_field :NoId, class: "form-control" %>
+        </div>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+        <div class="form-group">
+          <%= f.label :Alamat %>
+          <%= f.text_field :Alamat, class: "form-control" %>
+        </div>
 
-    <%= link_to "Back", :back %>
->>>>>>> 01b8bb26870bac772ef62de9fd6ddb9d2d61e608
+        <div class="form-group">
+          <%= f.label :'Jenis Kelamin' %>
+          <%= select_tag('pengguna[Jk]', options_for_select([['Laki-laki', 'Laki-laki'], ['Perempuan', 'Perempuan']]))%>
+        </div>
+
+
+        <div class="form-group">
+          <%= f.label :'add profil picture..' %>
+          <%= f.file_field :avatar, class: "btn btn-default" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "Update", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <h4>Unhappy?</h4> <%= button_to "Hapus Akun", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+
+
+
+
+    </section>
+    <!--end of content dashboard -->
+  </body>
+</html>

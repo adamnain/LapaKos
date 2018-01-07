@@ -7,28 +7,9 @@
 	</head>
 	<body>
 		<!--header-->
-		<header>
-			<div class="container">
-				<!--logo-->
-				<div id="logo">
-					<a href="/">
-						<%= image_tag("logo.png", :alt => "LapaKos") %>
-					</a>
-				</div>
-				<!--end of logo-->
-				<!--nav-->
-				<nav>
-					<ul>
-						<li><%= link_to "Login", kosts_path %></li>
-						<li><%= link_to "Sign Up", new_pengguna_registration_path	 %></li>
-						<li><%= link_to "Kelola Kosan", new_pengguna_registration_path, class: "btkelola" %></li>
-					</ul>
-				</nav>
-				<!--end of nav-->
-			</div>
-
-		</header>
+		<%= render 'kosts/header' %>
 		<!--end of header-->
+
 		<!--slider-->
 		<section id="slider">
 			<!--slider carousel-->
@@ -200,24 +181,7 @@
 		<!--end section quote-->
 
 		<!--section widget footer-->
-		<section id="widget-footer">
-			<div class="container">
-					<div class="col-sm-4">
-						isi widget
-					</div>
-					<div class="col-sm-4">
-						isi widget
-					</div>
-					<div class="col-sm-4">
-						isi widget
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<footer>
-			<p>&copy; copyright 2017</p>
-		</footer>
+		<%= render 'kosts/footer' %>
 		<!--end of widget footer-->
 
 	</body>

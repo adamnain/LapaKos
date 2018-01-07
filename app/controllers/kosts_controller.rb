@@ -5,6 +5,7 @@ class KostsController < ApplicationController
 	before_action :authenticate_pengguna!, except: [:detail, :show]
 
 	def index
+		@pengguna = Pengguna.find(current_pengguna.id)
 		@kosts = Kost.where(pengguna: current_pengguna.id)
 	end
 
@@ -21,6 +22,7 @@ class KostsController < ApplicationController
 	end
 
 	def inbox
+		@pengguna = Pengguna.find(current_pengguna.id)
 		@message = Message.find_by_sql(
 		["SELECT messages.id as id, messages.pengguna_id as sender, kosts.nama_kos, messages.pesan, receiver,penggunas.email, kost_id
 			FROM ((messages INNER JOIN kosts ON messages.kost_id = kosts.id)
@@ -28,6 +30,7 @@ class KostsController < ApplicationController
 	end
 
 	def outbox
+		@pengguna = Pengguna.find(current_pengguna.id)
 		@message = Message.find_by_sql(
 		["SELECT  messages.id as id, messages.pengguna_id as sender, kosts.nama_kos, messages.pesan, receiver,penggunas.email, kost_id
 			FROM ((messages INNER JOIN kosts ON messages.kost_id = kosts.id)
@@ -35,10 +38,12 @@ class KostsController < ApplicationController
 	end
 
 	def new
+		@pengguna = Pengguna.find(current_pengguna.id)
 		@kost = Kost.new
 	end
 
 	def create
+		@pengguna = Pengguna.find(current_pengguna.id)
 		@kost = Kost.new(resource_params)
 		if @kost.save
 			redirect_to controller: 'kosts', action: 'index'
