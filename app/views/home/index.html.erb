@@ -2,177 +2,175 @@
 <html>
 	<head>
 		<title>LapaKos</title>
-  	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
 	</head>
 	<body>
-		<!--header-->
-		<%= render 'kosts/header' %>
-		<!--end of header-->
+		<div class="row">
+				<!--header-->
+				<%= render 'kosts/header' %>
+				<!--end of header-->
 
-		<!--slider-->
-		<section id="slider">
-			<!--slider carousel-->
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
-			    <li data-target="#" data-slide-to="0" class="active"></li>
-			    <li data-target="#" data-slide-to="1"></li>
-			    <li data-target="#" data-slide-to="2"></li>
-			  </ol>
+				<!--slider-->
+				<section id="slider">
+					<!--slider carousel-->
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#" data-slide-to="0" class="active"></li>
+					    <li data-target="#" data-slide-to="1"></li>
+					    <li data-target="#" data-slide-to="2"></li>
+					  </ol>
 
-			  <!-- Wrapper for slides -->
-			  <div class="carousel-inner">
-			    <div class="item active">
-			      <%= image_tag("slide3.jpg", :alt => "slide 1", :class => "slider-main") %>
-			    </div>
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner">
+					    <div class="item active">
+					      <%= image_tag("slide3.jpg", :alt => "slide 1", :class => "slider-main") %>
+					    </div>
 
-			    <div class="item">
-			      <%= image_tag("slide2.jpg", :alt => "slide 2", :class => "slider-main") %>
-			    </div>
+					    <div class="item">
+					      <%= image_tag("slide2.jpg", :alt => "slide 2", :class => "slider-main") %>
+					    </div>
 
-			    <div class="item">
-			      <%= image_tag("slide3.jpg", :alt => "slide 3", :class => "slider-main") %>
-			    </div>
-			  </div>
+					    <div class="item">
+					      <%= image_tag("slide3.jpg", :alt => "slide 3", :class => "slider-main") %>
+					    </div>
+					  </div>
 
-			  <!-- Left and right controls -->
-			  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			    <span class="glyphicon glyphicon-chevron-left"></span>
-			    <span class="sr-only">Previous</span>
-			  </a>
-			  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-			    <span class="glyphicon glyphicon-chevron-right"></span>
-			    <span class="sr-only">Next</span>
-			  </a>
-			</div>
-			<!--end of carousel-->
-		</section>
-		<!--end of slider-->
-
-
-		<!--search box-->
-		<div class="container">
-			<div class="form-group">
-					<div>
-						<%= form_tag detail_path, class: "searchwrapper", :method => "get" do %>
-						    <%= text_field_tag :search, params[:search], class: "form-control", class: "searchmain", placeholder: "ketik alamat kosan" %>
-									<%= submit_tag "CARI", :name => nil, class: "btn btn-pink float-right" %>
-						<% end %>
+					  <!-- Left and right controls -->
+					  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
 					</div>
-				</div>
-		</div>
-		<!--end of searchbox-->
+					<!--end of carousel-->
+				</section>
+				<!--end of slider-->
 
-		<!--section dekat kampus-->
-		<section id="dekat-kampus">
-			<div class="container">
-				<h1>Kota Favorit</h1>
-				<div class="row">
-					<a href="/detail?utf8=✓&search=bandung">
-						<div class="col-sm-4">
-							<div class="profil-kampus">
-				      			<%= image_tag("bandung.jpg", :alt => "Bandung") %>
-								<h2>BANDUNG</h2>
+
+				<!--search box-->
+				<div class="container">
+					<div class="form-group">
+							<div>
+								<%= form_tag detail_path, class: "searchwrapper", :method => "get" do %>
+								    <%= text_field_tag :search, params[:search], class: "form-control", class: "searchmain", placeholder: "ketik alamat kosan" %>
+											<%= submit_tag "CARI", :name => nil, class: "btn btn-pink float-right" %>
+								<% end %>
 							</div>
 						</div>
-					</a>
+				</div>
+				<!--end of searchbox-->
 
-					<a href="/detail?utf8=✓&search=surabaya">
-						<div class="col-sm-4">
-							<div class="profil-kampus">
-								<%= image_tag("sby.jpg", :alt => "Surabaya") %>
-								<h2>SURABAYA</h2>
+				<!--section dekat kampus-->
+				<section id="dekat-kampus">
+					<div class="container">
+						<h1>Kota Favorit</h1>
+						<div class="row">
+							<a href="/detail?utf8=✓&search=bandung">
+								<div class="col-sm-4">
+									<div class="profil-kampus">
+						      			<%= image_tag("bandung.jpg", :alt => "Bandung") %>
+										<h2>BANDUNG</h2>
+									</div>
+								</div>
+							</a>
+
+							<a href="/detail?utf8=✓&search=surabaya">
+								<div class="col-sm-4">
+									<div class="profil-kampus">
+										<%= image_tag("sby.jpg", :alt => "Surabaya") %>
+										<h2>SURABAYA</h2>
+									</div>
+								</div>
+							</a>
+
+							<a href="/detail?utf8=✓&search=yogyakarta">
+								<div class="col-sm-4">
+									<div class="profil-kampus">
+										<%= image_tag("jogja.jpg", :alt => "Yogyakarta") %>
+										<h2>YOGYAKARTA</h2>
+									</div>
+							</a>
+
 							</div>
+
 						</div>
-					</a>
 
-					<a href="/detail?utf8=✓&search=yogyakarta">
-						<div class="col-sm-4">
-							<div class="profil-kampus">
-								<%= image_tag("jogja.jpg", :alt => "Yogyakarta") %>
-								<h2>YOGYAKARTA</h2>
-							</div>
-					</a>
-
+						<!--button selengkapnya-->
+						<div class="btn-selengkapnya">
+							<a href="#">Selengkapnya</a>
+						</div>
+						<!--end of buttone selengkapnya-->
 					</div>
+				</section>
+				<!--end of section depan kampus-->
 
-				</div>
+				<!--section quote-->
+				<div class='row'>
+		    <div class='col-md-offset-2 col-md-8'>
+					<h1 class="judul-home">Kata Mereka</h1>
+		      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+		        <!-- Bottom Carousel Indicators -->
+		        <ol class="carousel-indicators">
+		          <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+		          <li data-target="#quote-carousel" data-slide-to="1"></li>
+		          <li data-target="#quote-carousel" data-slide-to="2"></li>
+		        </ol>
 
-				<!--button selengkapnya-->
-				<div class="btn-selengkapnya">
-					<a href="#">Selengkapnya</a>
-				</div>
-				<!--end of buttone selengkapnya-->
-			</div>
-		</section>
-		<!--end of section depan kampus-->
-
-		<!--section quote-->
-		<div class='row'>
-    <div class='col-md-offset-2 col-md-8'>
-			<h1 class="judul-home">Kata Mereka</h1>
-      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-        <!-- Bottom Carousel Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#quote-carousel" data-slide-to="1"></li>
-          <li data-target="#quote-carousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Carousel Slides / Quotes -->
-        <div class="carousel-inner">
-          <!-- Quote 1 -->
-          <div class="item active">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-										<%= image_tag("jokowi.jpg", :alt => "uin", class: "img-circle", style: "width: 100px;height:100px;") %>
-                </div>
-                <div class="col-sm-9">
-                  <p>Startup yang luar biasa idenya bagus dan pengembangnya masih muda, lanjutkan.</p>
-                  <small>Jokowi</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-          <!-- Quote 2 -->
-          <div class="item">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-									<%= image_tag("raisa.jpg", :alt => "raisa", class: "img-circle", style: "width: 100px;height:100px;") %>
-                </div>
-                <div class="col-sm-9">
-                  <p>Dulu waktu kuliah aku selalu nyari kosan pake lapakos, praktis dan terjamin.</p>
-                  <small>Raisa</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-          <!-- Quote 3 -->
-          <div class="item">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-									<%= image_tag("pevita.jpg", :alt => "raisa", class: "img-circle", style: "width: 100px;height:100px;") %>
-                </div>
-                <div class="col-sm-9">
-                  <p>Traveling itu gausah ngeluarin banyak duit, contohnya kamu bisa nyari penginapan/kosan murah di sini (lapakos).</p>
-                  <small>Pevita Pearce</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-		<!--end section quote-->
-
+		        <!-- Carousel Slides / Quotes -->
+		        <div class="carousel-inner">
+		          <!-- Quote 1 -->
+		          <div class="item active">
+		            <blockquote>
+		              <div class="row">
+		                <div class="col-sm-3 text-center">
+												<%= image_tag("jokowi.jpg", :alt => "uin", class: "img-circle", style: "width: 100px;height:100px;") %>
+		                </div>
+		                <div class="col-sm-9">
+		                  <p>Startup yang luar biasa idenya bagus dan pengembangnya masih muda, lanjutkan.</p>
+		                  <small>Jokowi</small>
+		                </div>
+		              </div>
+		            </blockquote>
+		          </div>
+		          <!-- Quote 2 -->
+		          <div class="item">
+		            <blockquote>
+		              <div class="row">
+		                <div class="col-sm-3 text-center">
+											<%= image_tag("raisa.jpg", :alt => "raisa", class: "img-circle", style: "width: 100px;height:100px;") %>
+		                </div>
+		                <div class="col-sm-9">
+		                  <p>Dulu waktu kuliah aku selalu nyari kosan pake lapakos, praktis dan terjamin.</p>
+		                  <small>Raisa</small>
+		                </div>
+		              </div>
+		            </blockquote>
+		          </div>
+		          <!-- Quote 3 -->
+		          <div class="item">
+		            <blockquote>
+		              <div class="row">
+		                <div class="col-sm-3 text-center">
+											<%= image_tag("pevita.jpg", :alt => "raisa", class: "img-circle", style: "width: 100px;height:100px;") %>
+		                </div>
+		                <div class="col-sm-9">
+		                  <p>Traveling itu gausah ngeluarin banyak duit, contohnya kamu bisa nyari penginapan/kosan murah di sini (lapakos).</p>
+		                  <small>Pevita Pearce</small>
+		                </div>
+		              </div>
+		            </blockquote>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+				<!--end section quote-->
+		</div> <!--div row-->
 		<!--section widget footer-->
 		<%= render 'kosts/footer' %>
 		<!--end of widget footer-->
-
 	</body>
 </html>

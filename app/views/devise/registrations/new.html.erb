@@ -7,7 +7,7 @@
     <h3>Register</h3>
   </div>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "form-horizontal") do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-horizontal") do |f| %>
     <%= devise_error_messages! %>
 
     <div class="form-group">
@@ -22,7 +22,6 @@
     <div class="form-group">
       <%= f.label :password  %>
       <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      <i>(leave blank if you don't want to change it)</i>
         <% if @minimum_password_length %>
           <em><%= @minimum_password_length %> characters minimum</em>
         <% end %>
@@ -33,11 +32,6 @@
       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :current_password %>
-      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-      <i>(we need your current password to confirm your changes)</i>
-    </div>
 
     <div class="form-group">
       <%= f.label :Nama %>
@@ -46,11 +40,11 @@
 
     <div>
       <%= f.label :"Tanggal Lahir" %><br />
-      <%= f.date_select :tgl_lahir %>
+      <%= f.date_select :tgl_lahir, :start_year => 1990 %>
     </div>
 
     <div class="form-group">
-      <%= f.label :'No KTP' %>
+      <%= f.label :'No HP' %>
       <%= f.text_field :NoId, class: "form-control" %>
     </div>
 
@@ -71,11 +65,9 @@
     </div>
 
     <div class="form-group">
-      <%= f.submit "Update", class: "btn btn-primary" %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
     </div>
   <% end %>
-
-  <h4>Unhappy?</h4> <%= button_to "Hapus Akun", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
 
 </div>
 

@@ -1,4 +1,9 @@
-
+.btn{
+	border-radius: 1px !important;
+}
+.form-control{
+	border-radius: 1px !important;
+}
 
 
 .clear-both{
@@ -146,7 +151,7 @@ nav ul li a:hover{
 }
 /*=================> end of section dekat kampus <===================*/
 /*=================> wdget footer <===================*/
-#widget-footer{
+.widget-footer{
 	background-color: #424242;
 	height: 300px;
 	color: #fff;
